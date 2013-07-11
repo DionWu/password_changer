@@ -1,0 +1,273 @@
+<html>
+<head>
+<title>phpJobScheduler - Readme</title>
+<style type="text/css">
+BODY{  color:#107B08; font-size: 9pt; font-family: Verdana}
+.button {background-color:#94CE94; color:#107B08; font-weight: bold}
+em {color:#000;}
+table{font-size: 10pt; font-family: Verdana; font-weight: normal}
+.style1 {color: #000000}
+</style>
+
+<body >
+<div align="center">
+  <center>
+
+<table cellSpacing="3" cellPadding="0" border="0" width="1058">
+  <tr bgColor="#334873">
+    <td width="200" align="middle" bgcolor="#FFFFFF"><p align="center"><a
+    href="http://www.phpjobscheduler.co.uk/"><img src="pjslogo.gif"
+    alt="phpJobScheduler" border="0" width="165" height="75"></a><strong><br>
+    </strong></td>
+    <td align="middle" bgcolor="#FFFFFF" width="849"><p align="left"><strong>phpJobScheduler - README</strong><br>
+      Author: <a href="http://www.DWalker.co.uk">DWalker.co.uk</a>&nbsp; For help and support please try the <a href="http://members.dwalker.co.uk/forum/">forum</a><br>
+    </td>
+  </tr>
+</table>
+<br>
+</center></div>
+
+<center>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">Like it?  Please consider to<br> 
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="2148409">
+<input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="">
+<img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+<br />
+Every penny or cent helps :-) 
+</form>
+
+<p>&nbsp;</p>
+<strong><big>My other applications:</big> </strong> <br>
+<br>
+<div align="center">
+  <table border="0" cellspacing="0" width="712">
+      <tbody>
+        <tr>
+          <td width="172"><table border="0" cellspacing="2">
+              <tbody>
+                <tr>
+                  <td bgcolor="#E8E8FF" width="100%"><a href="http://websitemembermanager.com/"><img src="http://demo.websitemembermanager.com/members-section/images/wmm-logo-small.gif" alt="WebsiteMemberManager (WMM)" border="0" height="75" width="165"></a></td>
+                </tr>
+              </tbody>
+          </table></td>
+          <td bgcolor="#E8E8FF" width="536"><blockquote>
+              <p><a href="http://websitemembermanager.com/">WMM - WebsiteMemberManager</a><br>
+                <span class="style1">PHP MySQL automated&nbsp;members area; allows you to provide   website content (photos, videos, zip files, any type of file) for your <strong>members-only.<br>
+                  <br>
+                  </strong>WMM manages all your members  for you.</span> <strong><br>
+                  </strong></p>
+          </blockquote></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<div align="center"> </div>
+<div align="center"> <br>
+    <table border="0" cellspacing="0" width="712">
+      <tbody>
+        <tr>
+          <td align="center" width="171"><a href="http://www.dwalker.co.uk/phpmysqlautobackup/"><img src="http://www.dwalker.co.uk/phpmysqlautobackup/pmab.gif" alt="phpMySQLAutoBackup: the simple way to backup MySQL databases" align="absbottom" border="0"></a></td>
+          <td bgcolor="#EFEFEF" width="537"><blockquote>
+            <p><a href="http://www.dwalker.co.uk/phpmysqlautobackup/">phpMySQLAutoBackup</a><br>
+              <span class="style1">PHP MySQL backup utility &ndash; <strong>open source</strong>: released under</span> <a href="http://www.gnu.org/licenses/licenses.html#GPL">GPL License</a></p>
+            <p class="style1">phpMySQLAutoBackup automates the backup of MySQL databases.</p>
+          </blockquote></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+</center>
+
+<p align="center"><strong><em>php</em>JobScheduler is designed to automate tasks by
+scheduling PHP scripts to run at set intervals.</strong><br>
+This version runs silently (no screen output) but saves the output, including any errors,
+to the database.<br>
+Full details can be found at: <a href="http://www.phpjobscheduler.co.uk/">www.phpjobscheduler.co.uk</a></p>
+<strong>
+
+<p>Requirements:</strong> 
+
+<ul>
+  <li>MySQL</li>
+  <li>PHP4.x or 5.x</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>To upgrade an existing installation:</strong></p>
+<ol>
+  <li>
+    <p align="left">Follow the details below - your existing scheduled tasks, if any exist,
+      will remain unchanged within your database.&nbsp; <br>
+      &nbsp; Retain your existing<strong> /phpjobscheduler/pjsfiles/config.inc.php</strong> file - but you must add the new DEBUG constant.</p>
+  </li>
+  <li>
+    <p align="left">Login to check your scheduled tasks are still waiting to be fired, by
+      doing so it will automatically update your database and add the required new fields to the
+      tables as required.</p>
+  </li>
+  <li>When you are happy all is running without error set DEBUG to false, edit the file:<strong> /phpjobscheduler/pjsfiles/config.inc.php </strong></li>
+  <blockquote>
+    <blockquote><big><strong>
+
+    </strong></big></blockquote>
+  </blockquote>
+</ol>
+<big><strong><p>To complete a new installation:</strong> </big>
+
+<ol>
+  <li>Unzip the files to your computer <br>
+    <br>
+  </li>
+  <li>Edit the file:<strong> /phpjobscheduler/pjsfiles/config.inc.php </strong><br>
+    using notepad or your favourite PHP editor and change: <blockquote>
+      <blockquote>
+        <p>define('DBHOST', 'localhost');// MySQL host address - localhost is usually fine<br>
+        define('DBNAME', '');// MySQL database name - must already exist<br>
+        define('DBUSER', '');// MySQL username - must already exist<br>
+        define('DBPASS', '');// MySQL password for above username</p>
+      </blockquote>
+    </blockquote>
+  </li>
+  <li>Upload the folders and files to your server. <br>
+    <br>
+  </li>
+  <li><font color="#ff0000">YOU MUST <strong>password protect the &quot;pjsfiles&quot; folder</strong></font> - if you fail
+    to do so and someone found the folder on your website they could add/delete/modify your
+    scheduled jobs!&nbsp; If you host on Unix or Linux add htaccess to the folder to force a
+    username and password prompt before entry (if you host on a Windows machine RTFM).&nbsp;
+    You can normally add security to a folder using your Control Panel provided by your
+    host (please contact your host for details - and NOT ME!).<br>
+    <br>
+  </li>
+  <li>Then add the <strong><font color="#7B8CD6"></font><font
+        color="#8080C0">PHP</font></strong> or <strong><font color="#0080FF">HTML</font></strong> code to fire your scheduled tasks when due.&nbsp; There are two
+    methods:<br>
+    <br>
+    <ol>
+      <li type="i">add to the START of an<strong> existing<font color="#7B8CD6"> </font><font
+        color="#8080C0">PHP</font> file</strong>, for example to your index.php home page (and/or
+        any other relevant page in the root directory): 
+        <blockquote>
+          <p><font color="#8080C0"><strong>&lt;?php include( dirname(__FILE__) .
+          &quot;/phpjobscheduler/firepjs.php&quot;); ?&gt;</strong></font><br>
+          </p>
+        </blockquote>
+      </li>
+      <li type="i">or simply add to  an <strong>existing<font color="#0080FF"> HTML</font> page</strong>,  like your index.html home page and/or any other well visited page on any website:      <br>
+      </li>
+    </ol>
+    <blockquote>
+	<form name="f1">
+      <textarea rows="2" cols="120" onClick="this.focus();this.select()" name="fire_url" type="text" style="border:solid 1px #0080FF;">&lt;a href=&quot;http://www.phpjobscheduler.co.uk/&quot; title=&quot;phpJobScheduler&quot;&gt;&lt;img src=&quot;http://YOURDOMAIN/phpjobscheduler/firepjs.php?return_image=1&quot; border=&quot;0&quot; alt=&quot;phpJobScheduler&quot;&gt;&lt;/a&gt;</textarea>
+ 
+<strong><div id="domain_msg">Ensure you change 'YOURDOMAIN' to your own domain name!</div></strong>
+</form>
+<script>
+protocol_str=top.location.href.substring(0,5);
+if (protocol_str=="http:")
+{
+ the_link="<a href=\"http://www.phpjobscheduler.co.uk/\" title=\"phpJobScheduler\"><img src=\"http://";
+ the_link=the_link+self.location.hostname+self.location.pathname.replace("readme.html","");
+ the_link=the_link+"firepjs.php?return_image=1\" border=\"0\" alt=\"phpJobScheduler\"></a>";
+ document.f1.fire_url.value=the_link;
+ document.getElementById("domain_msg").innerHTML="";
+}
+if (top.location.href.indexOf("noconfig")>-1) alert("Before you can add a task you need to edit the file:\n\n /pjsfiels/config.inc.php \n\n see: To complete a new install.");
+
+</script>
+
+          The above  <strong><font color="#0080FF">HTML</font></strong> can be added to any web page on any website (not just to the site where phpJobScheduler is installed). Adding this code will add a very small clear image to your page - 
+        invisible (unless you know its there). Execution is very quick so will not slow the loading of any pages. </p>
+        <p>&nbsp;</p>
+    </blockquote>
+  </li>
+  <li><a href="pjsfiles/?add=1"><strong>click here to add your
+  scheduled tasks</strong></a>
+  
+  
+  
+  <br>
+  <br>
+  </li>
+  <blockquote>
+    <p>If you have correctly completed the above the following <strong><font color="#FF8000">tables</font></strong> will be created in your MySQL database: </p>
+  </blockquote>
+  <ol>
+    <blockquote>
+      <p align="left"><font color="#FF8000"><strong>phpJobScheduler<br>
+        phpJobScheduler_log</strong></font></p>
+    </blockquote>
+  </ol>
+  <li>When you are happy all is running without error set DEBUG to false, edit the file:<strong> /phpjobscheduler/pjsfiles/config.inc.php </strong><br>
+    <br>
+  </li>
+</ol>
+
+<hr width="100%" color="#808080" align="center">
+
+<blockquote>
+  <blockquote>
+    <p><strong><a name="error_log"></a><font color="#FF8000">Error log</font> - recording of
+    runs and errors of each fired task.</strong></p>
+    <blockquote>
+      <p>Recorded data: date of last run, and url including errors if any occur. If
+      &quot;Output:&quot; has no data then this means the script ran without errors or output. </p>
+      <p>By default error logging is turned on (TRUE). To turn on/off error logs: </p>
+      <blockquote>
+        <p>Change the value assigned to ERROR_LOG within the <strong>/pjsfiles/constants.inc.php</strong>
+        file. Change the value to FALSE to stop logging. It will not affect the running of fired
+        scripts if you turn off error logging. </p>
+      </blockquote>
+      <p>The output is truncated to a maximum length of 1200 characters by default to ensure the
+      logs table does not become too large. You can change this by editing the constant
+      MAX_ERROR_LOG_LENGTH within the constants.inc.php file.</p>
+    </blockquote>
+  </blockquote>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</blockquote>
+
+<hr width="100%" color="#808080" align="center">
+
+<blockquote>
+  <blockquote>
+    <p><a name="timeframewindow"></a> <strong><font color="#FF8000">Altering the time frame
+    window</font></strong></p>
+    <blockquote>
+      <p align="left">This can be changed by altering the value assigned to TIME_WINDOW within
+      the <strong>/pjsfiles/constants.inc.php</strong> file.&nbsp; The default value is 3600 seconds (60
+      minutes&nbsp; which should suffice for most sites).&nbsp; This means that when the firing
+      engine (phpjobscheduler/firepjs.php) is called any scheduled job having a fire time within
+      60 minutes will be executed.</p>
+      <p align="left">You can increase or decrease the default value of the time frame
+      window.&nbsp; If your site receives just a few hits per day you should consider increasing
+      the value to 43200 (12 hours).</p>
+      <p align="left">If your site<strong> ALWAYS</strong> receives several hits per hour or
+      more then you should consider reducing the value to suit your needs.</p>
+      <p align="left"><font color="#0000FF"><big><strong>NEED more help?&nbsp; Try </strong></big></font><a
+      href="http://members.dwalker.co.uk/forum/">the forum</a> </p>
+    </blockquote>
+  </blockquote>
+  <p align="left">&nbsp;</p>
+  <p align="left">&nbsp;</p>
+  <p align="left">&nbsp;</p>
+</blockquote>
+
+<hr width="100%" color="#808080" align="center">
+
+<p align="left">DISCLAIMER<br>
+phpJobScheduler IS PROVIDED &quot;AS IS&quot; WITHOUT REPRESENTATION OR WARRANTY OF ANY
+KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING WITHOUT LIMITATION, ANY REPRESENTATIONS OR
+ENDORSEMENTS REGARDING THE USE OF, THE RESULTS OF, OR PERFORMANCE OF THE INFORMATION, ITS
+APPROPRIATENESS, ACCURACY, RELIABILITY, OR CORRECTNESS.<br>
+THE ENTIRE RISK AS TO THE USE OF phpJobScheduler IS ASSUMED BY THE USER.&nbsp; IN NO EVENT
+I BE LIABLE FOR ANY DAMAGES, DIRECT, INDIRECT, INCIDENTAL OR CONSEQUENTIAL, RESULTING FROM
+ANY DEFECT IN phpJobScheduler, EVEN IF THE POSSIBILITY OF SUCH DAMAGES HAS BEEN ADVISED.
+&nbsp; THIS DISCLAIMER SHALL SUPERSEDE ANY VERBAL OR WRITTEN STATEMENT TO THE CONTRARY. IF
+YOU DO NOT ACCEPT THESE TERMS YOU MUST CEASE AND DESIST USING phpJobScheduler IMMEDIATELY.</p>
+</body>
+</html>
