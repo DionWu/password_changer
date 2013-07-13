@@ -23,10 +23,10 @@
 	$emailto = $email_array['email'];
 	$emailsubject = "The wait is officially OVER!!!";
 	$emailmessage = "<p> Dear " . $email_array['firstname'] . ", </p>
-					<p> We hope you had quite the productive time while not being able to access your Facebook account. I would just like to assure you that there has been no tampering with the information on your account. Provided below is the new password you must use to login. After login, please promptly change your password back to anything you'd like. </p>
+					<p> We hope you had quite the productive time while not being able to access your distracting service. Provided below is the password you must use to login. After login, please promptly change your password back to anything you'd like. </p>
 					<p> Your new password: <strong>" . $email_array['newpassword'] . "</strong></p>
 					<p> We would love to have you use our delightful service in the future! </p>
-					<p> Cheers!, </p> <p> NoMoreFBPls Team </p>";
+					<p> Cheers!, </p> <p> The Password Changers </p>";
 	$emailheaders = "From: goawayfbpls@gmail.com" .
 				"Reply-To: goawayfbpls@gmail.com";
 
@@ -47,7 +47,7 @@
 		  throw new phpmailerAppException("Email address " . $to . " is invalid -- aborting!");
 		}
 		$mail->IsSMTP();
-		$mail->SMTPDebug  = 2;
+		$mail->SMTPDebug  = 0;
 		$mail->Host       = "dionwucom.ipage.com";
 		$mail->Port       = "587";
 		$mail->SMTPSecure = "none";
@@ -78,14 +78,6 @@ EOT;
 		  $results_messages[] = $e->errorMessage();
 		}
 		 
-		if (count($results_messages) > 0) {
-		  echo "<h2>Run results</h2>\n";
-		  echo "<ul>\n";
-		foreach ($results_messages as $result) {
-		  echo "<li>$result</li>\n";
-		}
-		echo "</ul>\n";
-		}
 	};
 
 
@@ -103,11 +95,11 @@ EOT;
 /* send mail & check if correctly prepped for delivery */
 			sendmail();
 /* Update completion status & check for errors*/
-			/* $update_completion_status = "UPDATE accounts SET completion='yes' WHERE id =" . $email_array['id'] . "";
+			$update_completion_status = "UPDATE accounts SET completion='yes' WHERE id =" . $email_array['id'] . "";
 			$update_result = $mysqli->query($update_completion_status);
 			if (!$update_result) {
 				printf("%s\n", $mysqli->error);
-			}; */
+			}; 
 		};
 		return;
 	};
